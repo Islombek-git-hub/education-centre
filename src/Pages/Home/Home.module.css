@@ -1,0 +1,79 @@
+.home_head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+.home_text {
+  width: 60%;
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home_text h1 {
+  font-size: 56px;
+}
+.home_text p {
+  margin: 0.5rem 0;
+}
+.home_img {
+  width: 40%;
+  /* border: 1px solid; */
+}
+.home_img img {
+  width: 100%;
+}
+.hh_input {
+  width: 50%;
+  border: 3px solid #aaa;
+  outline: none;
+  padding: 0.5rem;
+  background-color: #eee;
+  border-radius: 8px;
+}
+.down {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+.about_edu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.about_edu h1 {
+  width: 100%;
+  text-align: center;
+  margin: 3rem 0;
+}
+.card_about_edu {
+  width: 235px;
+  height: 275px;
+  margin: 1rem;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(85, 85, 85, 0.25);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.card_about_edu:hover {
+  background: #f5f5f5;
+}
+.card_about_edu h5 {
+  width: 48%;
+}
+.card_about_edu_img {
+  width: 65%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.card_about_edu_img img {
+  width: 100%;
+}

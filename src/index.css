@@ -8,9 +8,31 @@
   text-decoration: none;
   list-style: none;
   color: #333;
+  transition: 0.2s linear all;
+}
+body {
+  overflow-x: hidden;
 }
 .container {
   max-width: 1200px;
   height: 100%;
   margin: 0 auto;
+}
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0d1c41;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4a607a;
 }
