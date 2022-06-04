@@ -52,18 +52,28 @@ const Home = () => {
             {dataHome[0].about_edu.map((a, i) => {
               return (
                 <div key={i + 11324} className={styles.card_about_edu}>
-                  <h5>{a.title}</h5>
                   <div className={styles.card_about_edu_img}>
                     <MyImage image={a.img_src} />
                   </div>
+                  <h5>{a.title}</h5>
                 </div>
               );
             })}
           </div>
           {/* ###################### */}
           <div className={styles.choice_edu}>
-            <h1>{dataHome[0].title_2}</h1>
-            <p>{dataHome[0].t2_desc}</p>
+            <h1 className={styles.choice_edu_title}>{dataHome[0].title_2}</h1>
+            <p className={styles.choice_edu_desc}>{dataHome[0].t2_desc}</p>
+            <div className={styles.choice_edu_cards}>
+              {dataHome[0].choice_edu.map((a, i) => {
+                return (
+                  <div key={a.img_src} className={styles.choice_edu_card}>
+                    <h2>{a.title}</h2>
+                    <MyImage image={a.img_src} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       ) : (

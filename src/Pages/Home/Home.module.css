@@ -51,29 +51,122 @@
 }
 .card_about_edu {
   width: 235px;
-  height: 275px;
+  height: 325px;
   margin: 1rem;
+  padding: 1rem;
   background: #ffffff;
   box-shadow: 0px 0px 10px rgba(85, 85, 85, 0.25);
   border-radius: 30px;
+  position: relative;
+  text-align: center;
   display: flex;
   flex-direction: column-reverse;
-  text-align: center;
-  justify-content: center;
   align-items: center;
 }
 .card_about_edu:hover {
   background: #f5f5f5;
 }
 .card_about_edu h5 {
-  width: 48%;
+  width: 70%;
 }
 .card_about_edu_img {
   width: 65%;
   height: 200px;
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .card_about_edu_img img {
   width: 100%;
+}
+.choice_edu_title {
+  text-align: center;
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.choice_edu_desc {
+  text-align: center;
+  width: 68%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+.choice_edu_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto;
+}
+.choice_edu_card {
+  position: relative;
+  height: 280px;
+  width: 500px;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 0 10px #aaa;
+  margin: 0.7rem;
+}
+.choice_edu_card span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.choice_edu_card img {
+  width: 200px;
+}
+@media (max-width: 950px) {
+  .home_head {
+    flex-direction: column;
+  }
+  .home_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .home_text h1 {
+    font-size: 48px;
+  }
+
+  .home_img {
+    width: 55%;
+    align-self: flex-end;
+  }
+  .about_edu h1 {
+    font-size: 28px;
+    margin: 1.5rem 0;
+  }
+}
+@media (max-width: 600px) {
+  .home_head {
+    flex-direction: column;
+  }
+
+  .home_text h1 {
+    font-size: 36px;
+  }
+  .home_text p {
+    font-size: 16px;
+  }
+  .home_text input {
+    font-size: 12px;
+    width: 80%;
+  }
+
+  .home_img {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .card_about_edu {
+    width: 100%;
+    height: 500px;
+    margin: 0.75rem 0;
+  }
+  .card_about_edu h5 {
+    font-size: 1rem;
+  }
 }

@@ -27,8 +27,16 @@
 .f_left ul li:last-child {
   font-size: 2.2rem;
 }
-/* .f_right {
-  width: 50%;
-  height: 80%;
-  overflow: hidden;
-} */
+@media (max-width: 700px) {
+  .footer {
+    height: auto;
+  }
+  .footer_container {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    align-items: start;
+  }
+  .f_left {
+    margin-bottom: 1.5rem;
+  }
+}
