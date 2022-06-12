@@ -1,29 +1,38 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./Header.module.css";
-import { FaAngleDown } from "react-icons/fa";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
+// import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import MyButton from "../../components/MyButton/MyButton";
 
 const Header = () => {
+  let time = new Date().toLocaleTimeString();
+  let day = new Date().toLocaleDateString();
+
+  const [ctime, setCtime] = useState("");
+  const [cDay, setCDay] = useState("");
+
+  const dateFun = () => {
+    time = new Date().toLocaleTimeString();
+    day = new Date().toLocaleDateString();
+    setCtime(time);
+    setCDay(day);
+  };
+
+  setInterval(() => {
+    dateFun();
+  }, 1000);
+
   return (
     <div className={styles.header}>
       <div className={`container ${styles.header_container}`}>
         <h3 className={styles.logo}>LOGO</h3>
         <div className={styles.header_right}>
-          <ul>
-            <li>BIZ HAQIMIZDA</li>
-            <li>
-              YORDAM <FaAngleDown />
-            </li>
-            <li>
-              KURSLAR <FaAngleDown />
-            </li>
-          </ul>
           <div className={styles.time}>
-            <p>10.10.2022 | 12:12:00</p>
+            <ul>
+              <li>{cDay}</li>
+              <li>{ctime}</li>
+            </ul>
           </div>
-          <div className={styles.sign_in}>
-            KIRISH <FaRegArrowAltCircleRight />
-          </div>
+          <MyButton>KIRISH</MyButton>
         </div>
       </div>
     </div>
