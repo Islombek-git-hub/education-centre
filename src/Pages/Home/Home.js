@@ -9,17 +9,9 @@ import { collection, getDocs } from "firebase/firestore";
 import styles from "./Home.module.css";
 import Loader from "../../components/Loader/Loader";
 import MyImage from "../../components/MyImage/MyImage";
-import MyButton from "../../components/MyButton/MyButton";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import { FaAngleDoubleDown } from "react-icons/fa";
+
 import { IconButton } from "@mui/material";
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 // #############################
 const Home = () => {
@@ -66,39 +58,83 @@ const Home = () => {
 
           {/* ###################### */}
           <div id="about_edu" className={styles.about_edu}>
-            <h1>{dataHome[0].title_1}</h1>
-            <Box sx={{ flexGrow: 1 }}>
-              <Grid
-                container
-                spacing={3}
-                // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-              >
-                {dataHome[0].about_edu.map((a, i) => {
-                  return (
-                    <Grid key={i + 11324} item xs={12} sm={6} md={3}>
-                      <Item>ITEM</Item>
-                    </Grid>
-                  );
-                })}
+            <Grid container spacing={3}>
+              <Grid item xs></Grid>
+              <Grid item sm={6}>
+                <h1 className={styles.title}>{dataHome[0].title_1}</h1>
               </Grid>
-            </Box>
+              <Grid item xs></Grid>
+            </Grid>
+
+            <Grid container spacing={3}>
+              <Grid item sm={1}></Grid>
+              <Grid item xs={12} sm={10}>
+                <Box sx={{ flexGrow: 1 }}>
+                  <Grid
+                    container
+                    spacing={4}
+                    // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                  >
+                    {dataHome[0].about_edu.map((a, i) => {
+                      return (
+                        <Grid key={i + 11324} item xs={12} sm={6} md={3}>
+                          <div
+                            className={`${styles.card} ${styles.about_edu_card}`}
+                          >
+                            about_edu
+                          </div>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                </Box>
+              </Grid>
+              <Grid item xs={1} sm={1}></Grid>
+            </Grid>
           </div>
           {/* ###################### */}
           <div className={styles.choice_edu}>
-            <h1 className={styles.choice_edu_title}>{dataHome[0].title_2}</h1>
-            <p className={styles.choice_edu_desc}>{dataHome[0].t2_desc}</p>
-
-            <Box sx={{ flexGrow: 1 }}>
-              <Grid container spacing={3}>
-                {dataHome[0].choice_edu.map((a, i) => {
-                  return (
-                    <Grid key={i + 11324} item xs={12} sm={6}>
-                      <Item>ITEM</Item>
-                    </Grid>
-                  );
-                })}
+            <Grid container>
+              <Grid item sm></Grid>
+              <Grid item sm={8}>
+                <h1 className={styles.title}>{dataHome[0].title_2}</h1>
               </Grid>
-            </Box>
+              <Grid item sm></Grid>
+            </Grid>
+
+            <Grid container spacing={1}>
+              <Grid item sm></Grid>
+              <Grid item sm={10}>
+                <p className={styles.title_desc}>{dataHome[0].t2_desc}</p>
+              </Grid>
+              <Grid item sm></Grid>
+            </Grid>
+
+            <Grid container spacing={3}>
+              <Grid item sm={1}></Grid>
+              <Grid item xs={12} sm={10}>
+                <Box sx={{ flexGrow: 1 }}>
+                  <Grid
+                    container
+                    spacing={4}
+                    // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                  >
+                    {dataHome[0].choice_edu.map((a, i) => {
+                      return (
+                        <Grid key={i + 11324} item xs={12} md={6}>
+                          <div
+                            className={`${styles.card} ${styles.about_edu_card}`}
+                          >
+                            choice_edu
+                          </div>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                </Box>
+              </Grid>
+              <Grid item xs={1} sm={1}></Grid>
+            </Grid>
           </div>
         </div>
       ) : (
