@@ -12,6 +12,7 @@ import MyImage from "../../components/MyImage/MyImage";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 
 import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 
 // #############################
 const Home = () => {
@@ -81,7 +82,8 @@ const Home = () => {
                           <div
                             className={`${styles.card} ${styles.about_edu_card}`}
                           >
-                            about_edu
+                            <h4>{a.title}</h4>
+                            <MyImage image={a.img_src} />
                           </div>
                         </Grid>
                       );
@@ -96,7 +98,7 @@ const Home = () => {
           <div className={styles.choice_edu}>
             <Grid container>
               <Grid item sm></Grid>
-              <Grid item sm={8}>
+              <Grid item sm={6}>
                 <h1 className={styles.title}>{dataHome[0].title_2}</h1>
               </Grid>
               <Grid item sm></Grid>
@@ -104,7 +106,7 @@ const Home = () => {
 
             <Grid container spacing={1}>
               <Grid item sm></Grid>
-              <Grid item sm={10}>
+              <Grid item sm={8}>
                 <p className={styles.title_desc}>{dataHome[0].t2_desc}</p>
               </Grid>
               <Grid item sm></Grid>
@@ -114,18 +116,17 @@ const Home = () => {
               <Grid item sm={1}></Grid>
               <Grid item xs={12} sm={10}>
                 <Box sx={{ flexGrow: 1 }}>
-                  <Grid
-                    container
-                    spacing={4}
-                    // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                  >
+                  <Grid container spacing={4}>
                     {dataHome[0].choice_edu.map((a, i) => {
                       return (
                         <Grid key={i + 11324} item xs={12} md={6}>
                           <div
-                            className={`${styles.card} ${styles.about_edu_card}`}
+                            className={`${styles.card} ${styles.choice_edu_card}`}
                           >
-                            choice_edu
+                            <Link to={a.url}>
+                              <h3 style={{ color: "#333" }}>{a.title}</h3>
+                              <MyImage image={a.img_src} />
+                            </Link>
                           </div>
                         </Grid>
                       );

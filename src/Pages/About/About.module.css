@@ -1,0 +1,46 @@
+.about {
+  margin-top: 80px;
+}
+.autoplay_video_box {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+.video_box_effect {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #333a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video_box_effect_h1 {
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 68px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+}
+.card {
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #ffffff;
+  padding: 3rem 1.5rem;
+  box-shadow: 0px 0px 10px rgba(85, 85, 85, 0.25);
+  border-radius: 30px;
+  cursor: pointer;
+}
+.card:hover {
+  background-color: #f3f3f3;
+}
+.statistics {
+  margin: 3rem auto;
+}
