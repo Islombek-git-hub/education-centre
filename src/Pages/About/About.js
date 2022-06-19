@@ -44,6 +44,7 @@ const About = () => {
 
           {/* ################### */}
           <div className={`container ${styles.statistics}`}>
+            {/* ###################################### */}
             <Grid container>
               <Grid item sm={1}></Grid>
               <Grid item xs={12} sm={10}>
@@ -71,6 +72,45 @@ const About = () => {
               <Grid item xs={1} sm={1}></Grid>
             </Grid>
           </div>
+          {/* ###################################### */}
+          <div className={`container ${styles.employees}`}>
+            <h2 className={styles.title}>{dataAbout[0].title_1}</h2>
+            <Grid container>
+              <Grid item sm={1}></Grid>
+              <Grid item xs={12} sm={10}>
+                <Box sx={{ flexGrow: 1 }}>
+                  <Grid container spacing={5}>
+                    {dataAbout[0].employees.map((a, i) => {
+                      return (
+                        <Grid key={i + 190232124} item xs={6} sm={4} md={3}>
+                          <div className={styles.employees_box}>
+                            <MyImage image={a.img_src} />
+                            <h3>{a.full_name}</h3>
+                            <p>{a.profession}</p>
+                          </div>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                </Box>
+              </Grid>
+              <Grid item xs={1} sm={1}></Grid>
+            </Grid>
+          </div>
+          {/* ###################################### */}
+          <div className={`container ${styles.our_students}`}>
+            <div className={styles.container_our_students}>
+              <h2 className={styles.title_our_students}>
+                {dataAbout[0].our_students}
+              </h2>
+              <MyImage image={dataAbout[0].our_students_img} />
+            </div>
+          </div>
+          {/* ###################################### */}
+          <h2 className={styles.title}>{dataAbout[0].title_2}</h2>
+          {/* ###################################### */}
+          <h2 className={styles.title}>{dataAbout[0].title_3}</h2>
+          {/* ###################################### */}
         </div>
       ) : (
         <Loader />

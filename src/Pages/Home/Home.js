@@ -1,8 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { db } from "../../firebase/firebase-config";
 import { collection, getDocs } from "firebase/firestore";
@@ -123,7 +121,7 @@ const Home = () => {
                           <div
                             className={`${styles.card} ${styles.choice_edu_card}`}
                           >
-                            <Link to={a.url}>
+                            <Link to={`/course${a.url}`}>
                               <h3 style={{ color: "#333" }}>{a.title}</h3>
                               <MyImage image={a.img_src} />
                             </Link>

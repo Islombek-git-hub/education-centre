@@ -31,7 +31,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   background: #ffffff;
   padding: 3rem 1.5rem;
   box-shadow: 0px 0px 10px rgba(85, 85, 85, 0.25);
@@ -42,5 +41,109 @@
   background-color: #f3f3f3;
 }
 .statistics {
-  margin: 3rem auto;
+  margin: 5rem auto;
+}
+.employees_box {
+  text-align: center;
+}
+.employees_box img {
+  border-radius: 50%;
+}
+.employees_box h3 {
+  margin: 0.3rem auto;
+}
+.title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+}
+.employees {
+  margin: 5rem auto;
+}
+.our_students {
+  display: flex;
+  height: 456px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(85, 85, 85, 0.25);
+  border-radius: 30px;
+  margin: 5rem auto;
+}
+
+.container_our_students {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title_our_students {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.12em;
+  width: 300px;
+}
+.container_our_students img {
+  height: 300px;
+}
+@media (max-width: 1200px) {
+  .our_students {
+    margin: 5rem 1rem;
+  }
+}
+@media (max-width: 1050px) {
+  .video_box_effect_h1 {
+    font-size: 48px;
+  }
+  .title_our_students {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.12em;
+    width: 300px;
+  }
+  .container_our_students img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 850px) {
+  .video_box_effect_h1 {
+    font-size: 36px;
+  }
+  .autoplay_video_box {
+    height: 350px;
+  }
+  .title_our_students {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .container_our_students {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 700px) {
+  .title {
+    font-size: 24px;
+  }
+  .employees_box h3 {
+    font-size: 16px;
+  }
+  .employees_box p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 620px) {
+  .autoplay_video_box {
+    height: 250px;
+  }
+  .container_our_students img {
+    height: auto;
+  }
 }

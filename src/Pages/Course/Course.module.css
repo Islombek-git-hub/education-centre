@@ -1,0 +1,28 @@
+.course_container {
+  margin: 7rem auto;
+}
+.course_container h1 {
+  margin-bottom: 1.2rem;
+}
+.course_container p {
+  text-align: justify;
+  padding-right: 2rem;
+}
+.course_container p::before {
+  content: "---";
+  opacity: 0;
+}
+@media (max-width: 900px) {
+  .course_container p {
+    margin-bottom: 2rem;
+    padding-right: 0;
+  }
+}
+@media (max-width: 500px) {
+  .course_container h1 {
+    font-size: 24px;
+  }
+  .course_container p {
+    font-size: 16px;
+  }
+}
