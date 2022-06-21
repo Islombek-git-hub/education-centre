@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Header.module.css";
 // import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import MyButton from "../../components/MyButton/MyButton";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   let time = new Date().toLocaleTimeString();
@@ -24,7 +25,9 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={`container ${styles.header_container}`}>
-        <h3 className={styles.logo}>LOGO</h3>
+        <h3 className={styles.logo}>
+          <Link to="">LOGO</Link>
+        </h3>
         <div className={styles.header_right}>
           <div className={styles.time}>
             <ul>
