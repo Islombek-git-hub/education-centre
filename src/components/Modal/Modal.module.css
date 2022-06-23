@@ -1,0 +1,20 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  background-color: #000c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal_none {
+  display: none;
+}
+.modal_child {
+  background-color: #3d3d3d;
+  width: 70%;
+  margin: auto;
+}

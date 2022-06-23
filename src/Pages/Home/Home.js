@@ -8,12 +8,16 @@ import styles from "./Home.module.css";
 import Loader from "../../components/Loader/Loader";
 import MyImage from "../../components/MyImage/MyImage";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-
+import Modal from "../../components/Modal/Modal";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { modalFun } from "../../redux/Actions/actions";
+import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 
 // #############################
 const Home = () => {
+  const dispatch = useDispatch();
   const userCollectionRef = collection(db, "home");
   const [dataHome, setDataHome] = useState([]);
   // console.log(dataHome[0].about_edu);
@@ -33,6 +37,14 @@ const Home = () => {
     <div className={styles.home}>
       {dataHome.length > 0 ? (
         <div className={`container ${styles.home_container}`}>
+          <Modal>
+            <video width="100%" controls>
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/education-b2f41.appspot.com/o/about_video.mp4?alt=media&token=4388ad84-d614-41d9-a92e-4401ab8ca772"
+                type="video/mp4"
+              />
+            </video>
+          </Modal>
           <div className={styles.home_head}>
             <Grid
               container
@@ -43,7 +55,7 @@ const Home = () => {
               <Grid item sm={12} md={8}>
                 <h1 className={styles.home_head_h1}>{dataHome[0].title}</h1>
                 <p className={styles.home_head_p}>{dataHome[0].title_desc}</p>
-                <IconButton>
+                <IconButton onClick={() => dispatch(modalFun())}>
                   <PlayCircleIcon
                     style={{ color: "#A89060", fontSize: "3rem" }}
                   />
@@ -118,14 +130,15 @@ const Home = () => {
                     {dataHome[0].choice_edu.map((a, i) => {
                       return (
                         <Grid key={i + 11324} item xs={12} md={6}>
-                          <div
-                            className={`${styles.card} ${styles.choice_edu_card}`}
-                          >
-                            <Link to={`/course${a.url}`}>
+                          <Link to={`/course${a.url}`}>
+                            <div
+                              className={`${styles.card} ${styles.choice_edu_card}`}
+                            >
+                              <BsFillArrowUpRightCircleFill />
                               <h3 style={{ color: "#333" }}>{a.title}</h3>
                               <MyImage image={a.img_src} />
-                            </Link>
-                          </div>
+                            </div>
+                          </Link>
                         </Grid>
                       );
                     })}

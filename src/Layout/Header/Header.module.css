@@ -26,10 +26,21 @@
   font-weight: 500;
   font-size: 0.8rem;
 }
-
+.about_link svg {
+  transform: translateY(5px);
+  font-size: 1.3rem;
+}
+.about_link:hover {
+  color: #a89060;
+}
 .time ul li {
   margin: 0;
 }
 .time {
   margin: auto 1rem;
+}
+@media (max-width: 600px) {
+  .about_link span {
+    display: none;
+  }
 }
