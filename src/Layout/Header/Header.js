@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Header.module.css";
 // import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import MyButton from "../../components/MyButton/MyButton";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaUniversity } from "react-icons/fa";
 
 const Header = () => {
@@ -30,11 +30,11 @@ const Header = () => {
           <Link to="">LOGO</Link>
         </h3>
         <div className={styles.header_right}>
-          <Link to="/about">
+          <NavLink to="/about">
             <h3 className={styles.about_link}>
               <span>Biz haqimizda</span> <FaUniversity />
             </h3>
-          </Link>
+          </NavLink>
           <div className={styles.time}>
             <ul>
               <li>{cDay}</li>
