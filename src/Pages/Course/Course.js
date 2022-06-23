@@ -51,7 +51,7 @@ const Course = () => {
             {dataCourse[0].course ? (
               dataCourse[0].course.map((a, i) => {
                 return (
-                  <Link key={i + 65432} to={a.url}>
+                  <Link key={i + 65432} to={`/videos${a.url}`}>
                     <div className={styles.course_box}>
                       <BsFillArrowUpRightCircleFill />
                       <MyImage image={a.img_src} />

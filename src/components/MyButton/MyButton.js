@@ -1,15 +1,8 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-const MyButton = ({ children }) => {
+const MyButton = ({ children, ...props }) => {
   return (
-    <Button
-      size="medium"
-      style={{
-        borderRadius: "8px",
-        backgroundColor: "#A89060",
-      }}
-      variant="contained"
-    >
+    <Button {...props} size="medium">
       {children}
     </Button>
   );

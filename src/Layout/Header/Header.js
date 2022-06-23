@@ -35,7 +35,15 @@ const Header = () => {
               <li>{ctime}</li>
             </ul>
           </div>
-          <MyButton>KIRISH</MyButton>
+          <MyButton
+            variant="contained"
+            style={{
+              borderRadius: "8px",
+              backgroundColor: "#A89060",
+            }}
+          >
+            KIRISH
+          </MyButton>
         </div>
       </div>
     </div>
