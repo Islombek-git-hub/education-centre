@@ -1,13 +1,8 @@
 import React from "react";
 
-const Player = ({ video_src }) => {
+const Player = ({ video_src, title, ...props }) => {
   return (
-    <iframe
-      width="100%"
-      height="450px"
-      src={video_src}
-      title="YouTube video player"
-    ></iframe>
+    <iframe {...props} src={video_src} title={title} allowFullScreen></iframe>
   );
 };
 export default Player;

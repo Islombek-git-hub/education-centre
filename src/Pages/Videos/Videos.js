@@ -39,7 +39,7 @@ const Videos = () => {
       {" "}
       {dataVideosPage ? (
         <div className={`container ${styles.videos}`}>
-          <ul>
+          <ul className={styles.modules}>
             <li>
               {dataVideosPage.map((a, i) => {
                 return (
@@ -51,7 +51,6 @@ const Videos = () => {
                       setindex(i);
                     }}
                     size="small"
-                    style={{ color: "#A89060" }}
                   >
                     {a.title}
                   </MyButton>
@@ -74,7 +73,7 @@ const Videos = () => {
                             video_src: a.video_src,
                           });
                         }}
-                        className={`${styles.shadow} ${styles.btn}`}
+                        className={styles.btn}
                         key={i + 75643231357}
                       >
                         <h5>{i + 1} - Dars</h5>
@@ -88,9 +87,12 @@ const Videos = () => {
               </div>
             </Grid>
             <Grid item sm={7}>
-              <div className={`${styles.shadow} ${styles.card_videos}`}>
+              <div className={styles.card_videos}>
                 {video.video_src !== "" ? (
-                  <Player video_src={video.video_src} />
+                  <Player
+                    className={styles.video_player}
+                    video_src={video.video_src}
+                  />
                 ) : (
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/education-b2f41.appspot.com/o/404.png?alt=media&token=4afa1b67-4e00-4eb4-97e7-a8733f4e51fc"
