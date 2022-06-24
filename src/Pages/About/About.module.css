@@ -58,7 +58,7 @@
   line-height: 44px;
   text-align: center;
   letter-spacing: 0.12em;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .employees {
   margin: 5rem auto;
@@ -89,6 +89,18 @@
 }
 .container_our_students img {
   height: 300px;
+}
+.carousel {
+  margin-bottom: 3rem;
+}
+.carousel button:focus {
+  background-color: #a89060 !important;
+}
+.carousel button:hover {
+  background-color: #d4b87e !important;
+}
+.carousel_item {
+  text-align: center;
 }
 @media (max-width: 1200px) {
   .our_students {

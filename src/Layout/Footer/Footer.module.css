@@ -1,7 +1,8 @@
 .footer {
   width: 100vw;
   height: 300px;
-  box-shadow: 5px 0 15px #aaa;
+  border-top: 2px solid #eee;
+  background-color: #f5f5f5;
 }
 .footer_container {
   width: 100%;

@@ -7,10 +7,11 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MyImage from "../../components/MyImage/MyImage";
 
+import Carousel from "react-elastic-carousel";
 const About = () => {
   const userCollectionRef = collection(db, "about");
   const [dataAbout, setDataAbout] = useState([]);
-
+  const [array, setarray] = useState([1, 2, 3, 4, 5]);
   const getData = async () => {
     try {
       const data = await getDocs(userCollectionRef);
@@ -107,9 +108,49 @@ const About = () => {
             </div>
           </div>
           {/* ###################################### */}
-          <h2 className={styles.title}>{dataAbout[0].title_2}</h2>
+          <Grid container>
+            <Grid item sm={1}></Grid>
+            <Grid item xs={12} sm={10}>
+              <Box sx={{ flexGrow: 1 }}>
+                <h2 className={styles.title}>{dataAbout[0].title_2}</h2>
+                <Carousel className={styles.carousel}>
+                  {array.map((item) => (
+                    <div
+                      className={styles.carousel_item}
+                      key={item + 456789876543}
+                    >
+                      <MyImage image="https://firebasestorage.googleapis.com/v0/b/education-b2f41.appspot.com/o/google.png?alt=media&token=eb1e5e7c-1d33-434b-83f2-aa5a2fbede54" />
+                      <h2># {item}</h2>
+                    </div>
+                  ))}
+                </Carousel>
+              </Box>
+            </Grid>
+            <Grid item xs={1} sm={1}></Grid>
+          </Grid>
+
           {/* ###################################### */}
-          <h2 className={styles.title}>{dataAbout[0].title_3}</h2>
+
+          <Grid container>
+            <Grid item sm={1}></Grid>
+            <Grid item xs={12} sm={10}>
+              <Box sx={{ flexGrow: 1 }}>
+                <h2 className={styles.title}>{dataAbout[0].title_3}</h2>
+                <Carousel className={styles.carousel}>
+                  {array.map((item) => (
+                    <div
+                      className={styles.carousel_item}
+                      key={item + 456789876543}
+                    >
+                      <MyImage image="https://firebasestorage.googleapis.com/v0/b/education-b2f41.appspot.com/o/undraw_certificate_re_yadi%201.png?alt=media&token=92e3c56a-f0f9-4a8e-a8af-8200a55f9a95" />
+                      <h2># {item}</h2>
+                    </div>
+                  ))}
+                </Carousel>
+              </Box>
+            </Grid>
+            <Grid item xs={1} sm={1}></Grid>
+          </Grid>
           {/* ###################################### */}
         </div>
       ) : (

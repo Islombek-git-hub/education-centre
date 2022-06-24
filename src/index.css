@@ -38,6 +38,9 @@ body {
 .active {
   display: none;
 }
+.rec-dot {
+  display: none;
+}
 @media (max-width: 1200px) {
   .container {
     padding: 0 1.5rem;
