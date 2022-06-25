@@ -43,13 +43,14 @@ const SignIn = ({ setLogin, getUser }) => {
     ) {
       setCookie("jwt_token", "UQWGDSBJBSHDSVHFVSHVCJHSGHJDSGFHSJ", 5);
 
-      // getUser(
-      //   students?.find(
-      //     (p) =>
-      //       p.name === values?.name &&
-      //       p.password.toString() === values.password.toString()
-      //   )
-      // );
+      getUser(
+        students?.find(
+          (p) =>
+            p.name === values?.name &&
+            p.password.toString() === values.password.toString()
+        )
+      );
+
       setLogin(true);
       history("/");
       alert("Success");
