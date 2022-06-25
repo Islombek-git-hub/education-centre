@@ -5,6 +5,8 @@ import About from "./Pages/About/About";
 import Course from "./Pages/Course/Course";
 import Error from "./Pages/Error/Error";
 import Home from "./Pages/Home/Home";
+import SignIn from "./Pages/SignIn/SignIn";
+import SignUp from "./Pages/SignUp/SignUp";
 import Videos from "./Pages/Videos/Videos";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
             <Route path="/course/:page_name" element={<Course />} />
             <Route path="/videos/:page_name" element={<Videos />} />
           </Route>
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/sign-in" element={<SignIn />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

@@ -43,12 +43,26 @@ const Header = () => {
           </div>
           <MyButton
             variant="contained"
+            href="/sign-in"
             style={{
               borderRadius: "8px",
               backgroundColor: "#A89060",
+              color: "#fff",
             }}
           >
             KIRISH
+          </MyButton>
+          <MyButton
+            variant="contained"
+            href="/sign-up"
+            style={{
+              borderRadius: "8px",
+              backgroundColor: "#4A607A",
+              color: "#fff",
+              marginLeft: "0.5rem",
+            }}
+          >
+            REGISTRATSIYA
           </MyButton>
         </div>
       </div>
