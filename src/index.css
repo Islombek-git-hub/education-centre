@@ -5,7 +5,7 @@
   padding: 0;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  text-decoration: none;
+  text-decoration: none !important;
   list-style: none;
   transition: 0.2s linear all;
 }
@@ -35,8 +35,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #4a607a;
 }
-.active {
+.header_active .active {
   display: none;
+}
+.admin_active .active p {
+  background-color: #4a607a;
+  color: #fff;
 }
 .rec-dot {
   display: none;

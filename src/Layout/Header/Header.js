@@ -29,7 +29,7 @@ const Header = () => {
         <h3 className={styles.logo}>
           <Link to="">LOGO</Link>
         </h3>
-        <div className={styles.header_right}>
+        <div className={`header_active ${styles.header_right}`}>
           <NavLink to="/about">
             <h3 className={styles.about_link}>
               <span>Biz haqimizda</span> <FaUniversity />
