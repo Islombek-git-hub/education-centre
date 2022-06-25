@@ -10,6 +10,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { Checkbox } from "@mui/material";
+import Loader from "../../../components/Loader/Loader";
+import MyButton from "../../../components/MyButton/MyButton";
 const Students = () => {
   const userCollectionRef = collection(db, "students");
   const [students, setStudents] = useState([]);
@@ -78,7 +80,7 @@ const Students = () => {
             setFormData({ ...formData, name: e.target.value });
           }}
           placeholder="Ism..."
-          className="form-control"
+          className={styles.form_input}
         />
         <input
           type="text"
@@ -87,7 +89,7 @@ const Students = () => {
             setFormData({ ...formData, surname: e.target.value });
           }}
           placeholder="Familiya..."
-          className="form-control my-3"
+          className={styles.form_input}
         />
         <input
           type="text"
@@ -95,7 +97,7 @@ const Students = () => {
           onChange={(e) => {
             setFormData({ ...formData, tel_number: e.target.value });
           }}
-          className="form-control my-3"
+          className={styles.form_input}
           placeholder="Telefon..."
         />
         <input
@@ -105,25 +107,29 @@ const Students = () => {
             setFormData({ ...formData, password: e.target.value });
           }}
           placeholder="Parol..."
-          className="form-control my-3"
+          className={styles.form_input}
         />
         <Checkbox
           value={formData.course}
           onChange={(e) => {
             setFormData({ ...formData, course: !formData.course });
           }}
-        />
+        />{" "}
+        Kurs
         <br />
-
-        <button
-          className="btn btn-secondary"
+        <MyButton
+          variant="contained"
+          style={{
+            borderRadius: "8px",
+            backgroundColor: "#4a607a",
+          }}
           onClick={(e) => {
             e.preventDefault();
             key ? createUser() : updateUser(updateId);
           }}
         >
           {key ? "QO'SHISH" : "O'ZGARTIRISH"}
-        </button>
+        </MyButton>
       </form>
       <table className="table">
         <thead>
@@ -134,6 +140,7 @@ const Students = () => {
             <th>Telefon</th>
             <th>Parol</th>
             <th>Kurs</th>
+            <th>_</th>
           </tr>
         </thead>
         <tbody>
@@ -179,7 +186,9 @@ const Students = () => {
             })
           ) : (
             <tr>
-              <td>Loading...</td>
+              <td>
+                <Loader />
+              </td>
             </tr>
           )}
         </tbody>

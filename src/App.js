@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
 import Layout from "./Layout";
 import About from "./Pages/About/About";
@@ -28,7 +29,7 @@ function App() {
             <Route
               path="/about"
               element={
-                <RequireAuth>
+                <RequireAuth access={login}>
                   <About />
                 </RequireAuth>
               }

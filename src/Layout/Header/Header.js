@@ -1,11 +1,12 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
-// import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import MyButton from "../../components/MyButton/MyButton";
 import { NavLink, Link } from "react-router-dom";
 import { FaUniversity } from "react-icons/fa";
-
+import { useSelector } from "react-redux";
 const Header = () => {
+  const user = useSelector((state) => state.user);
+  console.log(user);
   let time = new Date().toLocaleTimeString();
   let day = new Date().toLocaleDateString();
 

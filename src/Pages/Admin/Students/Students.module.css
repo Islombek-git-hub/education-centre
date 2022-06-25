@@ -1,3 +1,14 @@
 .students {
   padding: 2rem 0;
 }
+.form_input {
+  height: 48px;
+  width: 100%;
+  background: #f5f5f5;
+  border: 2px solid #eeeeee;
+  outline-color: #4a607a;
+  border-radius: 8px;
+  color: #aaa;
+  padding: 0 0.7rem;
+  margin-bottom: 1.2rem;
+}

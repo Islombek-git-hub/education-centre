@@ -1,12 +1,37 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./SignUp.module.css";
 import MyImage from "../../components/MyImage/MyImage";
-
+import { db } from "../../firebase/firebase-config";
+import { addDoc, collection } from "firebase/firestore";
 import Grid from "@mui/material/Grid";
 import MyButton from "../../components/MyButton/MyButton";
 import { Link } from "react-router-dom";
 import { FaAngleDoubleRight } from "react-icons/fa";
 const SignUp = () => {
+  const userCollectionRef = collection(db, "students");
+  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    password: "",
+    tel_number: "",
+    course: false,
+  });
+  const createUser = async () => {
+    if (formData.password === password) {
+      await addDoc(userCollectionRef, formData);
+      setFormData({
+        ...formData,
+        name: "",
+        surname: "",
+        password: "",
+        tel_number: "",
+        course: false,
+      });
+    } else {
+      alert("Parolni tekshiring");
+    }
+  };
   return (
     <div className={styles.sign_up}>
       <div className={`container ${styles.sign_in_container}`}>
@@ -39,6 +64,10 @@ const SignUp = () => {
                 ISM
               </label>
               <input
+                value={formData.name}
+                onChange={(e) => {
+                  setFormData({ ...formData, name: e.target.value });
+                }}
                 className={styles.form_input}
                 placeholder="Ismingizni kiriting"
                 type="text"
@@ -48,6 +77,10 @@ const SignUp = () => {
                 FAMILIYA
               </label>
               <input
+                value={formData.surname}
+                onChange={(e) => {
+                  setFormData({ ...formData, surname: e.target.value });
+                }}
                 className={styles.form_input}
                 placeholder="Ismingizni kiriting"
                 type="text"
@@ -57,6 +90,10 @@ const SignUp = () => {
                 TELEFON
               </label>
               <input
+                value={formData.tel_number}
+                onChange={(e) => {
+                  setFormData({ ...formData, tel_number: e.target.value });
+                }}
                 className={styles.form_input}
                 placeholder="Ismingizni kiriting"
                 type="text"
@@ -66,6 +103,10 @@ const SignUp = () => {
                 PAROL
               </label>
               <input
+                value={formData.password}
+                onChange={(e) => {
+                  setFormData({ ...formData, password: e.target.value });
+                }}
                 placeholder="Parolingizni kiriting"
                 className={styles.form_input}
                 type="password"
@@ -75,6 +116,10 @@ const SignUp = () => {
                 PAROLNI TASDIQLASH
               </label>
               <input
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
                 placeholder="Parolingizni qayta kiriting"
                 className={styles.form_input}
                 type="password"
@@ -82,17 +127,22 @@ const SignUp = () => {
               />
               <Grid container spacing={2}>
                 <Grid item xs={6}>
-                  <MyButton
-                    variant="contained"
-                    style={{
-                      borderRadius: "8px",
-                      backgroundColor: "#4A607A",
-                      width: "100%",
-                    }}
-                    type="submit"
-                  >
-                    REGISTRATSIYA
-                  </MyButton>
+                  <Link to="/sign-in">
+                    <MyButton
+                      variant="contained"
+                      style={{
+                        borderRadius: "8px",
+                        backgroundColor: "#4A607A",
+                        width: "100%",
+                      }}
+                      type="submit"
+                      onClick={() => {
+                        createUser();
+                      }}
+                    >
+                      REGISTRATSIYA
+                    </MyButton>
+                  </Link>
                 </Grid>
                 <Grid item xs={6}>
                   <MyButton

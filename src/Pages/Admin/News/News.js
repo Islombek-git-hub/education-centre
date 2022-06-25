@@ -70,7 +70,7 @@ const News = () => {
             setFormData({ ...formData, title: e.target.value });
           }}
           placeholder="Sarlavha..."
-          className="form-control"
+          className={styles.form_input}
         />
         <textarea
           type="text"
@@ -79,7 +79,7 @@ const News = () => {
             setFormData({ ...formData, desc: e.target.value });
           }}
           placeholder="Matn..."
-          className="form-control my-3"
+          className={styles.text_area}
         />
         <MyButton
           // className="btn btn-secondary"
