@@ -45,6 +45,38 @@
   border: 2px solid #eee;
   border-radius: 0.5rem;
 }
+.lock_img {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn_on {
+  background-color: #a89060 !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+  color: #fff !important;
+  margin: 1rem 0 !important;
+}
+.btn_off {
+  background-color: #aaa !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+  color: #fff !important;
+  margin: 1rem 0 !important;
+}
+.assignment_card {
+  margin: 0.5rem 0;
+  border: 2px solid #eee;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.assignment_card p {
+  font-size: 0.8rem;
+}
 @media (max-width: 650px) {
   .video_player {
     width: 100%;

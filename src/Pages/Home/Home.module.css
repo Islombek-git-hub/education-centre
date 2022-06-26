@@ -107,6 +107,60 @@
     line-height: 20px;
   }
 }
+.news_menu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: calc(100vh - 80px);
+  background-color: #eee;
+  z-index: 11111111111111;
+  transform: translateX(100%);
+}
+.news_menu_on {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: calc(100vh - 80px);
+  background-color: #eee;
+  z-index: 11111111111111;
+  transform: translateX(0);
+}
+.news_menu_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.news_menu_btn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background-color: #a89060;
+  color: #fff;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.news_menu_btn:hover {
+  opacity: 0.9;
+}
+.news_menu_card {
+  margin: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 1rem;
+}
 @media (max-width: 899px) {
   .choice_edu_card {
     height: 450px;

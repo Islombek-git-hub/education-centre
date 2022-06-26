@@ -6,16 +6,16 @@ import { collection, getDocs } from "firebase/firestore";
 import Loader from "../../components/Loader/Loader";
 import MyImage from "../../components/MyImage/MyImage";
 import Grid from "@mui/material/Grid";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 const Course = () => {
   let { page_name } = useParams();
   const userCollectionRef = collection(db, page_name);
   const [dataCourse, setdataCourse] = useState([]);
-  // console.log(dataCourse[0].about_edu);
   const getData = async () => {
     try {
       const data = await getDocs(userCollectionRef);
+
       setdataCourse(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     } catch (err) {
       console.error(err);

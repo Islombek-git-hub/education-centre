@@ -131,9 +131,9 @@ const Students = () => {
           {key ? "QO'SHISH" : "O'ZGARTIRISH"}
         </MyButton>
       </form>
-      <table className="table">
+      <table className={styles.form}>
         <thead>
-          <tr>
+          <tr className={styles.form_tr}>
             <th>#</th>
             <th>Ism</th>
             <th>Familiya</th>
@@ -147,7 +147,7 @@ const Students = () => {
           {students.length > 0 ? (
             students.map((user, i) => {
               return (
-                <tr key={user.id}>
+                <tr className={styles.form_td} key={user.id}>
                   <td>{i + 1}</td>
                   <td>{user.name}</td>
                   <td>{user.surname}</td>

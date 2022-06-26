@@ -14,22 +14,28 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { modalFun } from "../../redux/Actions/actions";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
+import { BiMessageSquareDetail } from "react-icons/bi";
 
 // #############################
 const Home = () => {
   const dispatch = useDispatch();
   const userCollectionRef = collection(db, "home");
+  const userCollectionRef_news = collection(db, "news");
   const [dataHome, setDataHome] = useState([]);
-  // console.log(dataHome[0].about_edu);
+  const [dataNews, setDataNews] = useState([]);
+  const [newsMenu, setNewsMenu] = useState(false);
+
   const getData = async () => {
     try {
       const data = await getDocs(userCollectionRef);
+      const data_news = await getDocs(userCollectionRef_news);
       setDataHome(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setDataNews(data_news.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     } catch (err) {
       console.error(err);
     }
   };
-  // console.log(dataHome);
+  console.log(dataNews);
   useEffect(() => {
     getData();
   }, []);
@@ -37,6 +43,31 @@ const Home = () => {
     <div className={styles.home}>
       {dataHome.length > 0 ? (
         <div className={`container ${styles.home_container}`}>
+          <div className={newsMenu ? styles.news_menu_on : styles.news_menu}>
+            <div className={styles.news_menu_box}>
+              <button
+                className={styles.news_menu_btn}
+                onClick={() => {
+                  setNewsMenu(!newsMenu);
+                }}
+              >
+                <BiMessageSquareDetail />
+              </button>
+              {dataNews.length > 0 ? (
+                dataNews.map((a) => {
+                  return (
+                    <div className={styles.news_menu_card}>
+                      <h3>{a.title}</h3>
+                      <p>{a.desc}</p>
+                    </div>
+                  );
+                })
+              ) : (
+                <h4>LOADING...</h4>
+              )}
+            </div>
+          </div>
+
           <Modal>
             <video width="100%" controls>
               <source

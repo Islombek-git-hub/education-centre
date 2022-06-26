@@ -1,6 +1,10 @@
 export const USER = "USER";
 
-const initialState = { data: undefined };
+const initialState = {
+  data: {
+    course: false,
+  },
+};
 
 function user(state = initialState, action) {
   switch (action.type) {
